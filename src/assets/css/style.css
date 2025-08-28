@@ -1,0 +1,413 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/quicksand/quicksand.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/quicksand/quicksand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/poppins/poppins.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/poppins/poppins.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/playfairdisplay/playfairdisplay.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/playfairdisplay/playfairdisplay.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Only You';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/only-you/only-you.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/only-you/only-you.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sacramento';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/sacramento/sacramento.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/sacramento/sacramento.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chillatos';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/chillatos/chillatos.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/chillatos/chillatos.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Carlytte';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/carlytte/carlytte.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/carlytte/carlytte.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mallong';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/mallong/mallong.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/mallong/mallong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Signora';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/signora/signora.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/signora/signora.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ShowcaseSans';
+    src: url('https://cdn.cinelove.me/fonts/webfonts/showcasesans/showcasesans.woff2') format('woff2'),
+    url('https://cdn.cinelove.me/fonts/webfonts/showcasesans/showcasesans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+header, footer {
+    background: #f5f5f5;
+    padding: 12px 16px;
+}
+
+@-webkit-keyframes mrotate-jsx-3319532958 {
+    to {
+        -webkit-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes mrotate-jsx-3319532958 {
+    to {
+        -webkit-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+
+nav a {
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+#app-id {
+    width: 450px;
+    height: 90vh;
+    margin: auto;
+    position: relative;
+    border: 1px solid rgb(224, 224, 224);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#app-view-index {
+    height: 100% !important;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: auto;
+    margin: auto;
+}
+
+#audio-control-wrapper.jsx-3319532958 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.audio-toggle.jsx-3319532958 {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: rgba(165, 165, 165, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.audio-toggle.mrotate.jsx-3319532958 {
+    -webkit-animation: mrotate-jsx-3319532958 5s linear infinite;
+    animation: mrotate-jsx-3319532958 5s linear infinite;
+}
+
+.music-icon.jsx-3319532958 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #7d0000;
+}
+
+.icon-cancel.jsx-3319532958 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.icon-line.jsx-3319532958 {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 100%;
+    height: 1px;
+    background: #fff;
+}
+
+.root-page-container {
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    background-size: cover;
+    width: 450px;
+    height: 8279px;
+    position: relative;
+}
+
+.root-page-full {
+    position: relative;
+    user-select: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 450px;
+    height: 8279px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.photo-component.jsx-1944329802 {
+    width: 100%;
+    height: 100%;
+}
+
+.photo-component.jsx-1944329802 .photo-bg-wrap.jsx-1944329802 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+
+.material-component.jsx-3557960200 {
+    width: 100%;
+    height: 100%;
+}
+
+.countdown.jsx-3272123691 > div.jsx-3272123691, .countdown.jsx-3272123691 {
+    height: 100%;
+    display: flex;
+}
+
+.countdown.jsx-3272123691 {
+    width: 100%;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: var(--spacing);
+    background-color: transparent !important;
+}
+
+.countdown.jsx-3272123691 > div.jsx-3272123691 {
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.countdown.jsx-3272123691 > div.jsx-3272123691 {
+    width: 25%;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+.countdown.jsx-3272123691 > div.jsx-3272123691, .countdown.jsx-3272123691 {
+    height: 100%;
+    display: flex;
+}
+
+.calendar .template-one {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.calendar .template-one .one-back {
+    width: 96%;
+    height: 96%;
+    background-color: #fff;
+}
+
+.calendar .template-one .one-head {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    top: 6%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    font-size: 29px;
+    color: #fff;
+}
+
+.calendar .template-one .one-body {
+    position: absolute;
+    top: 25%;
+    left: 3%;
+    width: 94%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar .template-one .one-body > div {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar .template-one .one-body > div {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.heart-date {
+    position: absolute;
+    width: 13%;
+    height: 18%;
+}
+
+.colorF {
+    color: #fff !important;
+    z-index: 20;
+}
+
+.body-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .15;
+    font-size: 100px;
+}
+
+.advanced-marker-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.advanced-marker-wrapper * {
+    box-sizing: border-box;
+}
+
+.advanced-marker-wrapper > div > div {
+    border-radius: 0px;
+}
+
+:where(.css-vorumu).ant-btn-variant-outlined, :where(.css-vorumu).ant-btn-variant-dashed {
+    border-color: #d9d9d9;
+    background: #ffffff;
+}
+
+:where(.css-vorumu).ant-btn-color-default {
+    color: rgba(0, 0, 0, 0.88);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+:where(.css-vorumu).ant-btn {
+    font-size: 16px;
+    height: 32px;
+    padding: 0px 15px;
+    border-radius: 6px;
+}
+
+:where(.css-vorumu).ant-btn {
+    outline: none;
+    position: relative;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    color: rgba(0, 0, 0, 0.88);
+}
+
+:where(.css-vorumu).ant-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 16px;
+    box-sizing: border-box;
+}
