@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "nodemon src/server.js",
@@ -23,6 +23,7 @@
     "http-errors": "~1.6.3",
     "mongodb": "^6.18.0",
     "morgan": "~1.9.1",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "serverless-http": "^4.0.0"
   }
 }
