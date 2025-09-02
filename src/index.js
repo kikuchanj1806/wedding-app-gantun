@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-let server; // giữ instance http.Server để shutdown
+let index; // giữ instance http.Server để shutdown
 const PORT = process.env.PORT || 3000;
 
 /** ---------- View engine ---------- **/
@@ -43,7 +43,7 @@ export async function start() {
     try {
         app.locals.db = await connectMongo();
 
-        server = app.listen(PORT, () => {
+        index = app.listen(PORT, () => {
             console.log(`Server listening at http://localhost:${PORT}`);
         });
 
@@ -51,7 +51,7 @@ export async function start() {
         process.on('SIGINT', () => shutdown('SIGINT'));
         process.on('SIGTERM', () => shutdown('SIGTERM'));
 
-        return server;
+        return index;
     } catch (err) {
         console.error('❌ Failed to start:', err);
         throw err; // để caller quyết định thoát process
@@ -65,9 +65,9 @@ async function shutdown(signal) {
 
 export async function stop(exitProcess = false) {
     try {
-        if (server) {
-            await new Promise(resolve => server.close(resolve));
-            server = undefined;
+        if (index) {
+            await new Promise(resolve => index.close(resolve));
+            index = undefined;
         }
         await closeMongo();
     } catch (e) {

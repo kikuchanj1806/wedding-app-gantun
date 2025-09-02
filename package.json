@@ -1,15 +1,15 @@
 {
   "name": "wedding-app",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "license": "MIT",
   "type": "module",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "nodemon --inspect src/server.js"
+    "dev": "nodemon src/index.js",
+    "start": "nodemon --inspect src/index.js"
   },
   "dependencies": {
     "cloudinary": "^2.7.0",
