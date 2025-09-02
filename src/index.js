@@ -56,17 +56,17 @@ async function ensureMongo() {
 }
 
 // Chạy local khi không phải môi trường Vercel
-if (!process.env.VERCEL) {
-    const PORT = process.env.PORT || 3000;
-    ensureMongo().then(() => {
-        app.listen(PORT, () => {
-            console.log(`Local server listening at http://localhost:${PORT}`);
-        });
-    }).catch(err => {
-        console.error('Failed to start locally:', err);
-        process.exit(1);
-    });
-}
+// if (!process.env.VERCEL) {
+//     const PORT = process.env.PORT || 3000;
+//     ensureMongo().then(() => {
+//         app.listen(PORT, () => {
+//             console.log(`Local server listening at http://localhost:${PORT}`);
+//         });
+//     }).catch(err => {
+//         console.error('Failed to start locally:', err);
+//         process.exit(1);
+//     });
+// }
 
 export default async function handler(req, res) {
     try {
@@ -78,4 +78,4 @@ export default async function handler(req, res) {
     }
 }
 
-export { app };
+// export { handler };
