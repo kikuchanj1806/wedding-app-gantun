@@ -46,12 +46,12 @@ app.get('/healthz', (req, res) => res.json({ ok: true }));
  */
 let mongoReady; // promise cache
 async function ensureMongo() {
-    if (!mongoReady) {
-        mongoReady = connectMongo().then((db) => {
-            app.locals.db = db;
-            return db;
-        });
-    }
+    // if (!mongoReady) {
+    //     mongoReady = connectMongo().then((db) => {
+    //         app.locals.db = db;
+    //         return db;
+    //     });
+    // }
     return mongoReady;
 }
 
