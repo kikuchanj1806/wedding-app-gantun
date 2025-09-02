@@ -1,23 +1,22 @@
+// src/index.js (ESM)
 import path from 'path';
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import expressLayouts from 'express-ejs-layouts';
-import {fileURLToPath} from 'url';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
-import indexRouter from './routes/index.js';
-import {buildCorsOptions} from './config/cors.js';
 
-// Mongo helpers (native driver)
-import {closeMongo, connectMongo} from './db/mongo.js';
+import indexRouter from './routes/index.js';
+import { buildCorsOptions } from './config/cors.js';
+import { connectMongo /*, closeMongo*/ } from './db/mongo.js';
 
 dotenv.config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-let index; // giữ instance http.Server để shutdown
-const PORT = process.env.PORT || 3000;
 
 /** ---------- View engine ---------- **/
 app.set('view engine', 'ejs');
@@ -32,54 +31,51 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'assets')));
 
 /** ---------- CORS ---------- **/
-const corsOptions = buildCorsOptions();
-app.use(cors(corsOptions));
+app.use(cors(buildCorsOptions()));
 
 /** ---------- Routes ---------- **/
 app.use('/', indexRouter);
 
-/** ---------- Bootstrap functions ---------- **/
-export async function start() {
-    try {
-        app.locals.db = await connectMongo();
+// Healthcheck route (giúp test nhanh)
+app.get('/healthz', (req, res) => res.json({ ok: true }));
 
-        index = app.listen(PORT, () => {
-            console.log(`Server listening at http://localhost:${PORT}`);
+/**
+ * Serverless entry:
+ * - KHÔNG dùng app.listen
+ * - Kết nối Mongo 1 lần và tái sử dụng giữa các lần gọi
+ */
+let mongoReady; // promise cache
+async function ensureMongo() {
+    if (!mongoReady) {
+        mongoReady = connectMongo().then((db) => {
+            app.locals.db = db;
+            return db;
         });
-
-        // graceful shutdown
-        process.on('SIGINT', () => shutdown('SIGINT'));
-        process.on('SIGTERM', () => shutdown('SIGTERM'));
-
-        return index;
-    } catch (err) {
-        console.error('❌ Failed to start:', err);
-        throw err; // để caller quyết định thoát process
     }
+    return mongoReady;
 }
 
-async function shutdown(signal) {
-    console.log(`\n${signal} received. Closing...`);
-    await stop(/* exitProcess */ true);
+// Chạy local khi không phải môi trường Vercel
+if (!process.env.VERCEL) {
+    const PORT = process.env.PORT || 3000;
+    ensureMongo().then(() => {
+        app.listen(PORT, () => {
+            console.log(`Local server listening at http://localhost:${PORT}`);
+        });
+    }).catch(err => {
+        console.error('Failed to start locally:', err);
+        process.exit(1);
+    });
 }
 
-export async function stop(exitProcess = false) {
+export default async function handler(req, res) {
     try {
-        if (index) {
-            await new Promise(resolve => index.close(resolve));
-            index = undefined;
-        }
-        await closeMongo();
-    } catch (e) {
-        console.error('Error during shutdown:', e);
-    } finally {
-        if (exitProcess) process.exit(0);
+        await ensureMongo();
+        return app(req, res);
+    } catch (err) {
+        console.error('Handler error:', err);
+        res.status(500).send('Internal Server Error');
     }
-}
-
-// Tự chạy khi file được chạy trực tiếp (trừ khi đang test)
-if (process.env.NODE_ENV !== 'test') {
-    start().catch(() => process.exit(1));
 }
 
 export { app };
