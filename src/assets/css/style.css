@@ -740,7 +740,7 @@ img.heart-date {
     #app-id {
         margin: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 
     #app-id .pc-content {

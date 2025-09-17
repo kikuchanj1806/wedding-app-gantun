@@ -1050,5 +1050,28 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/js/index.js" defer></script>
+<script>
+    (function ($) {
+        const mq = '(max-width: 767.98px)';
+
+        function clearInlineStylesIfMobile() {
+            if (window.matchMedia(mq).matches) {
+                $('.pc-content[style]').each(function () {
+                    this.removeAttribute('style');
+                });
+            }
+        }
+
+        // Debounce để tránh gọi liên tục khi resize
+        function debounce(fn, wait) {
+            let t; return function(){ clearTimeout(t); t=setTimeout(fn, wait); };
+        }
+
+        $(function () {
+            clearInlineStylesIfMobile();                 // chạy khi load
+            $(window).on('resize', debounce(clearInlineStylesIfMobile, 150)); // chạy khi resize
+        });
+    })(jQuery);
+</script>
 </body>
 </html>
