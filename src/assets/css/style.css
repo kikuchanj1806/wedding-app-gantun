@@ -433,58 +433,6 @@ img.heart-date {
     visibility: hidden;
 }
 
-#blessing-box.jsx-898919076 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    z-index: 1000;
-    height: 180px;
-    position: absolute;
-    width: 285px;
-    bottom: 58px;
-    left: 16px;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-#blessing-box.jsx-898919076 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    z-index: 1000;
-    height: 180px;
-    position: absolute;
-    width: 285px;
-    bottom: 58px;
-    left: 16px;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
 #cinelove-toolbar.jsx-1401461546 {
     position: absolute;
     left: 0;
@@ -596,12 +544,14 @@ img.heart-date {
 .pc-container #cinelove-toolbar #cinelove-like-button, .pc-container #cinelove-toolbar #cinelove-gift-button {
     width: 35px;
 }
+
 .pc-container #cinelove-toolbar .message-box-button, .pc-container #cinelove-toolbar #animation-gift-preview-btn, .pc-container #cinelove-toolbar #cinelove-gift-button, .pc-container #cinelove-toolbar #cinelove-like-button {
     font-size: 12px;
     height: 35px;
     line-height: 35px;
     border-radius: 25px;
 }
+
 #cinelove-gift-button {
     background-image: url(https://cinelove.me/_next/static/media/gift-box.f417ec86.png);
     background-size: 100%;
@@ -621,6 +571,88 @@ img.heart-date {
 /*    !*overflow: hidden;*!*/
 /*    margin: auto;*/
 /*}*/
+
+#blessing-box.jsx-3895218497 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    z-index: 1000;
+    height: 180px;
+    position: absolute;
+    width: 285px;
+    bottom: 58px;
+    left: 16px;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+}
+
+.blessing-message.jsx-3895218497 {
+    font-size: 11px;
+    color: white;
+    position: absolute;
+    min-height: 28px;
+    line-height: 14px;
+    margin: 3px 0;
+    border-radius: 7px;
+    padding: 2px 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: rgba(225, 117, 117, 0.5);
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* dải cuộn */
+#blessing-box .ticker-track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    animation: blessing-scroll var(--dur, 12s) linear infinite;
+}
+
+#blessing-box .blessing-message {
+    position: relative !important;
+    top: 0 !important;
+    opacity: 1 !important;
+    margin: 6px 0;
+}
+
+@keyframes blessing-scroll {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+}
 
 /*-----------------------------------------------------end-blessing-box-----------------------------------------------------*/
 
@@ -652,7 +684,7 @@ img.heart-date {
     -ms-flex-pack: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 999;
+    z-index: 99999;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -694,4 +726,33 @@ img.heart-date {
     transition: color 0.3s ease;
 }
 
+#app-view-index.hide-toolbar #cinelove-toolbar, #app-view-index.hide-toolbar #cinelove-animation-box, #app-view-index.hide-toolbar .received-gifts-wrapper {
+    display: none;
+}
+
+#app-view-index.hide-toolbar .toolbar-toggle-button {
+    bottom: 20px !important;
+}
+
 /*-----------------------------------------------------end-toolbar-toggle-button-----------------------------------------------------*/
+
+@media (max-width: 768px) {
+    #app-id {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #app-id .pc-content {
+        width: 100% !important;
+        height: 100vh !important;
+    }
+
+    #app-view-index.hide-toolbar .toolbar-toggle-button {
+        position: fixed;
+    }
+
+    #app-view-index.hide-toolbar .toolbar-toggle-button {
+        bottom: 70px;
+    }
+}
