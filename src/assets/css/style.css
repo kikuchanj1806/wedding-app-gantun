@@ -646,8 +646,185 @@ img.heart-date {
 }
 
 @keyframes blessing-scroll {
-    from { transform: translateY(0); }
-    to   { transform: translateY(-50%); }
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+
+.popup-wrapper.jsx-831600802 {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s ease, visibility 0s linear .25s;
+    z-index: 9999999;
+    background: transparent;
+}
+
+.popup-wrapper.jsx-831600802.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .25s ease;
+}
+
+.bar-messwin.jsx-3319829800 {
+    width: 100%;
+    max-width: 640px;
+    min-height: 370px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transform: translateY(24px);
+    opacity: 0;
+    transition: transform .28s ease, opacity .28s ease;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    background: radial-gradient(328px at 2.9% 15%,
+    rgb(255, 226, 226) 0%,
+    #fff 25.8%,
+    #fff 50.8%,
+    #fff 77.6%,
+    rgb(255, 246, 246) 100.7%);
+}
+
+.popup-wrapper.jsx-831600802.active .bar-messwin.jsx-3319829800 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.bar-messwin.jsx-3319829800 .danmu-logo.jsx-3319829800 {
+    position: absolute;
+    width: 140px;
+    height: 66px;
+    top: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bar-messwin.jsx-3319829800 .icon-guanbi.jsx-3319829800 {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    font-size: 24px;
+    color: rgb(153, 153, 153);
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-tit.jsx-3319829800 {
+    margin-top: 57px;
+    font-size: 21px;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+    z-index: 1;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 {
+    z-index: 1;
+    width: 90%;
+}
+
+.cinelove-btn.rounded.jsx-120244559 {
+    border-radius: 40px;
+}
+
+.cinelove-btn.jsx-120244559 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-width: 100px;
+    gap: 5px;
+    height: 46px;
+    background: rgb(237, 85, 102);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800:first-child {
+    margin-top: 25px;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 {
+    display: flex;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 .bar-m-name.jsx-3319829800 {
+    padding: 0px 10px;
+    height: 50px;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 .bar-m-com.jsx-3319829800 {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    border: 1px solid rgba(237, 85, 102, 0.4);
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.bar-messwin.jsx-3319829800 input.jsx-3319829800, .bar-messwin.jsx-3319829800 textarea.jsx-3319829800 {
+    background: transparent;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800:nth-child(2) {
+    margin-top: 14px;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 {
+    display: flex;
+}
+
+.pc-container .bar-messwin * {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 .bar-m-mess.jsx-3319829800 {
+    padding: 9px 14px;
+    height: 92px;
+}
+
+.bar-messwin.jsx-3319829800 .bar-m-cont.jsx-3319829800 .bar-m-info.jsx-3319829800 .bar-m-com.jsx-3319829800 {
+    width: 100%;
+    color: rgb(51, 51, 51);
+    border: 1px solid rgba(237, 85, 102, 0.4);
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.bar-messwin.jsx-3319829800 input.jsx-3319829800, .bar-messwin.jsx-3319829800 textarea.jsx-3319829800 {
+    background: transparent;
+}
+
+.pc-container .bar-messwin * {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.popup-backdrop.jsx-831600802 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999997;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 /*-----------------------------------------------------end-blessing-box-----------------------------------------------------*/

@@ -81,3 +81,36 @@
         // Nếu nội dung thay đổi động (append thêm lời chúc), có thể gọi lại logic tính halfHeight + cập nhật --dur
     });
 })(jQuery);
+
+(function ($) {
+    $(document).on('click', '.message-box-button', function (e) {
+        e.preventDefault();
+
+        const $container = $('#app-view-index');
+
+        // Chỉ thêm backdrop nếu chưa có
+        if (!$container.find('.popup-backdrop.jsx-831600802').length) {
+            $container.append('<div class="jsx-831600802 popup-backdrop fade-enter-done"></div>');
+        }
+
+        // Thêm class active cho popup wrapper
+        $('.popup-wrapper.jsx-831600802').addClass('active');
+    });
+
+    /* (Tuỳ chọn) Đóng popup khi click backdrop */
+    $(document).on('click', '#app-view-index .popup-backdrop.jsx-831600802', function () {
+        $(this).remove();
+        $('.popup-wrapper.jsx-831600802').removeClass('active');
+    });
+
+    $(document).on('click', '.jsx-3319829800.iconfont.icon-guanbi', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // gỡ backdrop trong #app-view-index (nếu có nhiều thì gỡ hết)
+        $('#app-view-index .popup-backdrop.jsx-831600802').remove();
+
+        // bỏ trạng thái active của popup
+        $('.popup-wrapper.jsx-831600802').removeClass('active');
+    });
+})(jQuery);

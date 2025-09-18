@@ -1017,7 +1017,8 @@
                         <div class="jsx-831523885 message-box-button"><span
                                     style="display:inline-block;width:calc(100% - 24px)" class="jsx-831523885">Gửi lời chúc...</span><img
                                     style="height:24px;vertical-align:middle"
-                                    src="https://cinelove.me/_next/static/media/message.24f9a1e2.png" class="jsx-831523885"></div>
+                                    src="https://cinelove.me/_next/static/media/message.24f9a1e2.png"
+                                    class="jsx-831523885"></div>
                     </div>
                     <div class="jsx-2074202128 toolbar-right">
                         <div id="animation-gift-preview-btn" class="jsx-2074202128"><img
@@ -1028,8 +1029,29 @@
                 </div>
             </div>
 
+            <div id="blessing-box-popup" class="jsx-831600802 popup-wrapper slideInBtm-enter-done">
+                <div class="jsx-3319829800 bar-messwin"><img src="https://cinelove.me/_next/static/media/message-heart.9f3f7935.png"
+                                                             alt="message heart" class="jsx-3319829800 danmu-logo"><span
+                            class="jsx-3319829800 iconfont icon-guanbi cursor-pointer">x</span>
+                    <div class="jsx-3319829800 bar-m-tit">Lời chúc</div>
+                    <div class="jsx-3319829800 bar-m-cont">
+                        <div class="jsx-3319829800 bar-m-info"><input type="text" maxlength="25"
+                                                                      placeholder="Tên của bạn"
+                                                                      class="jsx-3319829800 bar-m-com bar-m-name"
+                                                                      value=""></div>
+                        <div class="jsx-3319829800 bar-m-info"><textarea placeholder="Lời chúc của bạn"
+                                                                         class="jsx-3319829800 bar-m-com bar-m-mess"></textarea>
+                        </div>
+                    </div>
+                    <button class="jsx-120244559 cinelove-btn rounded " style="margin-top: 25px; width: 90%;">Gửi Lời
+                        Chúc
+                    </button>
+                </div>
+            </div>
+
             <div class="jsx-3116023621 toolbar-toggle-button">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24"
+                     width="24" xmlns="http://www.w3.org/2000/svg">
                     <path class="iconPath"
                           fill="none"
                           stroke-linecap="round"
@@ -1064,7 +1086,11 @@
 
         // Debounce để tránh gọi liên tục khi resize
         function debounce(fn, wait) {
-            let t; return function(){ clearTimeout(t); t=setTimeout(fn, wait); };
+            let t;
+            return function () {
+                clearTimeout(t);
+                t = setTimeout(fn, wait);
+            };
         }
 
         $(function () {
