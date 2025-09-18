@@ -95,9 +95,9 @@ export default async function handler(req, res) {
 
 
 // (Tùy chọn chạy local: bật block dưới nếu muốn dev local)
-// if (!process.env.VERCEL) {
-//   const PORT = process.env.PORT || 3000;
-//   getDb().catch(() => {}).finally(() => {
-//     app.listen(PORT, () => console.log(`Local server listening at http://localhost:${PORT}`));
-//   });
-// }
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3000;
+  getDb().catch(() => {}).finally(() => {
+    app.listen(PORT, () => console.log(`Local server listening at http://localhost:${PORT}`));
+  });
+}

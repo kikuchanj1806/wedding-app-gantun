@@ -222,8 +222,6 @@ nav a {
     background-color: rgb(255, 255, 255);
     background-image: none;
     background-size: cover;
-    width: 450px;
-    height: 8279px;
     position: relative;
 }
 
@@ -234,8 +232,6 @@ nav a {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: 450px;
-    height: 8279px;
     min-width: 50px;
     min-height: 50px;
 }
