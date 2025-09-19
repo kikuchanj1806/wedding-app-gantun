@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <audio src="https://cdn.cinelove.me/mp3/aa11c468-d872-4815-ae41-806632db97d3.mp3" loop="" preload="auto"></audio>
             <div class="position-relative overflow-auto" style="background-color:#fff">
                 <div class="root-page-container">
                     <div class="root-page-full">
@@ -992,23 +993,14 @@
                 </div>
             </div>
 
-
-            <div id="blessing-box" style="opacity: 1;" class="jsx-3895218497">
-                <div class="jsx-3895218497 blessing-message" style="top: 98px; opacity: 1;"><span
-                            class="jsx-898919076 blessing-text"><strong class="jsx-898919076">Quang</strong>: 🕊️ Tân hôn hạnh phúc, trăm năm bên nhau!</span>
-                </div>
-                <div class="jsx-3895218497 blessing-message" style="top: 133px; opacity: 1;"><span
-                            class="jsx-898919076 blessing-text"><strong class="jsx-898919076">Thanh</strong>: 🎊 Chúc hai bạn luôn vui vẻ, thấu hiểu và nâng đỡ nhau!</span>
-                </div>
-                <div class="jsx-3895218497 blessing-message" style="top: -15.5px; opacity: -0.55;"><span
-                            class="jsx-898919076 blessing-text"><strong class="jsx-898919076">Mai</strong>: 🕊️ Tân hôn hạnh phúc, trăm năm bên nhau!</span>
-                </div>
-                <div class="jsx-3895218497 blessing-message" style="top: 19.5px; opacity: 1;"><span
-                            class="jsx-898919076 blessing-text"><strong class="jsx-898919076">Hải</strong>: 🎊 Chúc hai bạn luôn vui vẻ, thấu hiểu và nâng đỡ nhau!</span>
-                </div>
-                <div class="jsx-3895218497 blessing-message" style="top: 58.5px; opacity: 1;"><span
-                            class="jsx-898919076 blessing-text"><strong class="jsx-898919076">Hoàng Dũng</strong>: 🕊️ Tân hôn hạnh phúc, trăm năm bên nhau!</span>
-                </div>
+            <div id="blessing-box" class="jsx-3895218497" style="opacity:1;">
+                <% (blessings || []).forEach(function(b){ %>
+                    <div class="jsx-3895218497 blessing-message">
+                      <span class="jsx-898919076 blessing-text">
+                        <strong class="jsx-898919076"><%= b.name %></strong>: <%= b.message %>
+                      </span>
+                    </div>
+                <% }) %>
             </div>
 
             <div id="cinelove-toolbar" class="jsx-1401461546">
@@ -1070,6 +1062,7 @@
         </div>
     </div>
 </div>
+<div id="hearts-layer"></div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/js/index.js" defer></script>
 <script>

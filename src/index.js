@@ -10,6 +10,7 @@ import cors from 'cors';
 import indexRouter from './routes/index.js';
 import { buildCorsOptions } from './config/cors.js';
 import { connectMongo } from './db/mongo.js';
+import blessingsRouter from './routes/blessings.js';
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.use(cors(buildCorsOptions()));
 
 /** ---------- Healthcheck (không đụng DB) ---------- **/
 app.get('/healthz', (req, res) => res.json({ ok: true }));
+app.use('/api/blessings', blessingsRouter);
 
 /** ---------- DB middleware (chỉ dùng cho route cần DB) ---------- **/
 let mongoReady; // cache promise giữa các request (và giữa invocations nếu container được reuse)

@@ -1,18 +1,36 @@
-// ESM
+// src/config/cors.js
 export function buildCorsOptions() {
-    const origins = (process.env.CORS_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
-    const allowAll = origins.includes('*');
+    const whitelist = [
+        'http://localhost:6002',
+        process.env.ALLOWED_ORIGIN, // cho phép cấu hình thêm qua .env
+    ].filter(Boolean);
+
+    const localhostRegex = /^http:\/\/localhost:\d+$/;
+    const loopbackRegex  = /^http:\/\/127\.0\.0\.1:\d+$/;
 
     return {
         origin(origin, cb) {
-            // Requests không có Origin (server-side, curl, Postman) -> cho qua
+            // Request nội bộ (same-origin) hoặc công cụ như Postman sẽ không có Origin => cho qua
             if (!origin) return cb(null, true);
-            if (allowAll || origins.includes(origin)) return cb(null, true);
+
+            // Cho phép file:// (Origin: null) — CHỈ DEV nếu bạn đang mở file tĩnh từ ổ đĩa
+            if (origin === 'null' && process.env.NODE_ENV !== 'production') {
+                return cb(null, true);
+            }
+
+            if (
+                whitelist.includes(origin) ||
+                localhostRegex.test(origin) ||
+                loopbackRegex.test(origin)
+            ) {
+                return cb(null, true);
+            }
+
             return cb(new Error(`Not allowed by CORS: ${origin}`));
         },
         credentials: true,
-        methods: ['GET','HEAD','PUT','PATCH','POST','DELETE','OPTIONS'],
+        methods: ['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'],
         allowedHeaders: ['Content-Type','Authorization'],
-        optionsSuccessStatus: 204,
+        maxAge: 86400, // cache preflight 1 ngày
     };
 }

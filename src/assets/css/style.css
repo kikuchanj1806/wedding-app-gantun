@@ -168,6 +168,10 @@ nav a {
     align-items: center;
 }
 
+.audio-toggle.is-paused {
+    animation-play-state: paused !important;
+}
+
 .audio-toggle.jsx-3319532958 {
     width: 100%;
     height: 100%;
@@ -600,6 +604,7 @@ img.heart-date {
     color: white;
     position: absolute;
     min-height: 28px;
+    height: 28px;
     line-height: 14px;
     margin: 3px 0;
     border-radius: 7px;
@@ -827,6 +832,30 @@ img.heart-date {
     background: rgba(0, 0, 0, 0.4);
 }
 
+.toast-success {
+    position: fixed;
+    left: 50%;
+    top: 20px; /* khoảng cách từ mép trên màn hình */
+    transform: translateX(-50%) translateY(-12px);
+    background: rgba(0, 0, 0, .85);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.2;
+    opacity: 0;
+    transition: opacity .22s ease, transform .22s ease;
+    z-index: 10000000;
+    pointer-events: none;
+    max-width: min(92vw, 520px);
+    text-align: center;
+}
+
+.toast-success.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /*-----------------------------------------------------end-blessing-box-----------------------------------------------------*/
 
 
@@ -839,8 +868,8 @@ img.heart-date {
     position: absolute;
     right: 8px;
     bottom: 70px;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -861,6 +890,7 @@ img.heart-date {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+.toolbar-toggle-button svg { pointer-events: bounding-box; }
 
 .watermark.hide-toolbar-content.jsx-3116023621 {
     bottom: 70px;
@@ -905,6 +935,32 @@ img.heart-date {
 
 #app-view-index.hide-toolbar .toolbar-toggle-button {
     bottom: 20px !important;
+}
+
+/* Lớp phủ để thả tim (không chặn click) */
+#hearts-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none; /* để không cản thao tác người dùng */
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* Một trái tim */
+.heart {
+    position: absolute;
+    top: -40px;             /* bắt đầu trên đỉnh */
+    font-size: 24px;        /* sẽ scale bằng transform trong JS */
+    opacity: 0.9;
+    will-change: transform, opacity;
+    animation: fall linear forwards;
+}
+
+/* keyframes rơi */
+@keyframes fall {
+    0%   { transform: translate3d(var(--x, 0), -60px, 0) rotate(0deg) scale(var(--s,1)); opacity: 0; }
+    10%  { opacity: 1; }
+    100% { transform: translate3d(var(--x, 0), 110vh, 0) rotate(var(--r, 360deg)) scale(var(--s,1)); opacity: 0; }
 }
 
 /*-----------------------------------------------------end-toolbar-toggle-button-----------------------------------------------------*/
