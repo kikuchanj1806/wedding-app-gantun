@@ -360,3 +360,57 @@
     // (tuỳ chọn) tự chạy khi hover
     // btn.addEventListener('mouseenter', throttledBurst);
 })();
+
+(function () {
+    // Định dạng 2 chữ số (giây/phút/giờ)
+    const pad2 = (n) => String(n).padStart(2, '0');
+
+    // Tìm tất cả countdowns trên trang
+    function initCountdown(box) {
+        const deadlineAttr = box.getAttribute('data-deadline');
+        if (!deadlineAttr) return;
+        const deadline = new Date(deadlineAttr);
+        if (isNaN(+deadline)) return;
+
+        // Lấy 4 nhóm cột: [ngày, giờ, phút, giây]
+        // Mỗi nhóm là 1 <div> chứa 2 <div> con: số & nhãn
+        const groups = Array.from(box.children).filter(el => el instanceof HTMLElement);
+        if (groups.length < 4) return;
+
+        const numberEls = groups.map(g => g.firstElementChild).slice(0,4);
+
+        function tick() {
+            const now = new Date();
+            let diff = deadline - now;
+            if (diff <= 0) {
+                // Hết giờ
+                numberEls[0].textContent = '0';
+                numberEls[1].textContent = '00';
+                numberEls[2].textContent = '00';
+                numberEls[3].textContent = '00';
+                clearInterval(timer);
+                // (tuỳ chọn) đổi nhãn thành "Đã diễn ra" hoặc ẩn box:
+                // box.textContent = 'Sự kiện đã diễn ra';
+                return;
+            }
+
+            const sec = Math.floor(diff / 1000);
+            const days = Math.floor(sec / 86400);
+            const hours = Math.floor((sec % 86400) / 3600);
+            const mins = Math.floor((sec % 3600) / 60);
+            const secs = sec % 60;
+
+            numberEls[0].textContent = String(days);     // ngày có thể > 99
+            numberEls[1].textContent = pad2(hours);
+            numberEls[2].textContent = pad2(mins);
+            numberEls[3].textContent = pad2(secs);
+        }
+
+        tick(); // render ngay lập tức
+        const timer = setInterval(tick, 1000);
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.countdown.componentBOX').forEach(initCountdown);
+    });
+})();
