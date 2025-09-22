@@ -109,6 +109,43 @@ header, footer {
     -webkit-user-select: none;
 }
 
+/*.stage-wrap {*/
+/*    position: fixed;*/
+/*    inset: 0;*/
+/*    width: 100vw;*/
+/*    height: var(--app-vh, 100vh); !* fix 100vh trên iOS *!*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    overflow: hidden;*/
+/*    background: #fff; !* nếu muốn nền trắng *!*/
+/*}*/
+
+/*#app-view-index {*/
+/*    width: 430px;   !* kích thước thiết kế gốc *!*/
+/*    height: 932px;*/
+/*    transform-origin: top left;*/
+/*    will-change: transform;*/
+/*}*/
+
+.stage-wrap{
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: var(--app-vh, 100vh); /* chống 100vh iOS */
+    display: grid;
+    /* dùng biến để đổi căn khi vào chế độ fit-theo-chiều-ngang */
+    place-items: var(--place-align, center) var(--place-justify, center);
+    overflow: hidden;
+    background: #fff; /* tuỳ bạn */
+}
+
+#app-view-index{
+    width: 430px;
+    height: 932px;
+    transform-origin: top left;
+    will-change: transform;
+}
+
 @-webkit-keyframes mrotate-jsx-3319532958 {
     to {
         -webkit-transform: rotate(1turn);
@@ -142,7 +179,7 @@ nav a {
 }
 
 #app-view-index {
-    height: 100% !important;
+    height: 100%;
     position: relative;
     width: 100%;
     max-width: 500px;
@@ -974,23 +1011,23 @@ img.heart-date {
 
 /*-----------------------------------------------------end-toolbar-toggle-button-----------------------------------------------------*/
 
-@media (max-width: 768px) {
-    #app-id {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-    }
+/*@media (max-width: 768px) {*/
+/*    #app-id {*/
+/*        margin: 0;*/
+/*        width: 100%;*/
+/*        height: 100%;*/
+/*    }*/
 
-    #app-id .pc-content {
-        width: 100% !important;
-        height: 100% !important;
-    }
+/*    #app-id .pc-content {*/
+/*        width: 100% !important;*/
+/*        height: 100% !important;*/
+/*    }*/
 
-    #app-view-index.hide-toolbar .toolbar-toggle-button {
-        position: fixed;
-    }
+/*    #app-view-index.hide-toolbar .toolbar-toggle-button {*/
+/*        position: fixed;*/
+/*    }*/
 
-    #app-view-index.hide-toolbar .toolbar-toggle-button {
-        bottom: 70px;
-    }
-}
+/*    #app-view-index.hide-toolbar .toolbar-toggle-button {*/
+/*        bottom: 70px;*/
+/*    }*/
+/*}*/

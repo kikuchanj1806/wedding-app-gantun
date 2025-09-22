@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link type="text/css" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400,500,700&amp;lang=en">
     <link type="text/css" rel="stylesheet"
@@ -14,8 +14,8 @@
 </head>
 <body>
 <div id="app-id">
-    <div style="width: 450px; height: 90vh; margin: auto; position: relative; border: 1px solid rgb(224, 224, 224); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px; border-radius: 3px; overflow: hidden;"
-         class="jsx-3147566159 pc-content">
+    <div
+         class="jsx-3147566159 pc-content stage-wrap">
         <div id="app-view-index" class="jsx-3116023621">
             <div id="audio-control-wrapper" class="jsx-3319532958 cursor-pointer">
                 <div class="jsx-3319532958 audio-toggle mrotate">
@@ -1070,73 +1070,85 @@
 <script src="/js/index.js" defer></script>
 <script>
     (function(){
-        // Kích thước thiết kế gốc
         const BASE_W = 430, BASE_H = 932;
+        const MIN_CONTAIN_SCALE = 0.80; // ngưỡng: dưới mức này chuyển sang fit-theo-chiều-ngang
+
+        function setRealVh() {
+            document.documentElement.style.setProperty('--app-vh', window.innerHeight + 'px');
+        }
+
+        function applyWrapAsFullscreen(wrap) {
+            // .stage-wrap đã set trong CSS; bổ sung cho chắc nếu wrap là .pc-content
+            wrap.classList.add('stage-wrap');
+            // KHÔNG ép width/height cố định nữa
+            wrap.style.width = '';
+            wrap.style.height = '';
+            wrap.style.margin = '';
+            wrap.style.position = '';
+            wrap.style.border = '';
+            wrap.style.boxShadow = '';
+            wrap.style.borderRadius = '';
+            // overflow xử lý trong fit()
+        }
+
+        function fit(stage, wrap) {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+
+            const sx = vw / BASE_W;
+            const sy = vh / BASE_H;
+            const sContain = Math.min(sx, sy);
+
+            // Mặc định: contain + căn giữa, không cuộn
+            let s = sContain;
+            let overflowY = 'hidden';
+            let align = 'center';   // place-items:center (mặc định của .stage-wrap)
+            let justify = 'center';
+
+            // Nếu màn quá nhỏ (thu bé quá mức) -> fit theo chiều ngang & cho phép cuộn dọc
+            // hoặc khi cao quá ngắn (sy << sx) cũng có thể dùng width-fit cho “đầy” hơn
+            if (sContain < MIN_CONTAIN_SCALE) {
+                s = sx;                // fit theo chiều ngang
+                overflowY = 'auto';    // cho phép cuộn dọc
+                align = 'start';       // căn trên cho dễ đọc
+                justify = 'center';
+            }
+
+            stage.style.transform = `scale(${s})`;
+
+            // cập nhật wrap (grid căn & overflow)
+            const wrapEl = wrap || document.querySelector('.stage-wrap');
+            if (wrapEl) {
+                wrapEl.style.setProperty('--place-align', align);
+                wrapEl.style.setProperty('--place-justify', justify);
+                wrapEl.style.overflowY = overflowY;
+                wrapEl.style.overflowX = 'hidden';
+            }
+        }
 
         window.addEventListener('DOMContentLoaded', () => {
-            const stage = document.getElementById('app-view-index');      // coi như "stage"
+            const stage = document.getElementById('app-view-index');
             if (!stage) return;
 
-            // Wrapper lấy khung để fit (dùng container .pc-content của bạn)
+            // chuẩn bị kích thước gốc
+            stage.style.width  = BASE_W + 'px';
+            stage.style.height = BASE_H + 'px';
+            stage.style.transformOrigin = 'top left';
+            stage.style.willChange = 'transform';
+
             const wrap = stage.closest('.pc-content') || stage.parentElement;
+            applyWrapAsFullscreen(wrap);
 
-            // đảm bảo stage có kích thước gốc & scale từ góc trên trái
-            Object.assign(stage.style, {
-                width:  BASE_W + 'px',
-                height: BASE_H + 'px',
-                transformOrigin: 'top left',
-                willChange: 'transform'
-            });
-
-            // căn giữa stage trong khung chứa (không làm thay đổi layout khác)
-            Object.assign(wrap.style, {
-                display: 'grid',
-                placeItems: 'center',
-                overflow: 'hidden'
-            });
-
-            function fit() {
-                const w = wrap.clientWidth  || window.innerWidth;
-                const h = wrap.clientHeight || window.innerHeight;
-                const sx = w / BASE_W;
-                const sy = h / BASE_H;
-                const s  = Math.min(sx, sy);
-                stage.style.transform = `scale(${s})`;
+            function onResize() {
+                setRealVh();
+                fit(stage, wrap);
             }
 
-            let t; const debounced = () => { clearTimeout(t); t = setTimeout(fit, 50); };
-            fit();
-            window.addEventListener('resize', debounced);
-            window.addEventListener('orientationchange', debounced);
+            onResize();
+            window.addEventListener('resize', onResize);
+            window.addEventListener('orientationchange', onResize);
         });
     })();
-</script>
-<script>
-    (function ($) {
-        const mq = '(max-width: 767.98px)';
-
-        function clearInlineStylesIfMobile() {
-            if (window.matchMedia(mq).matches) {
-                $('.pc-content[style]').each(function () {
-                    this.removeAttribute('style');
-                });
-            }
-        }
-
-        // Debounce để tránh gọi liên tục khi resize
-        function debounce(fn, wait) {
-            let t;
-            return function () {
-                clearTimeout(t);
-                t = setTimeout(fn, wait);
-            };
-        }
-
-        $(function () {
-            clearInlineStylesIfMobile();                 // chạy khi load
-            $(window).on('resize', debounce(clearInlineStylesIfMobile, 150)); // chạy khi resize
-        });
-    })(jQuery);
 </script>
 </body>
 </html>
