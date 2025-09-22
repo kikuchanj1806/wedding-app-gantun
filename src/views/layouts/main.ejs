@@ -1069,6 +1069,49 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/js/index.js" defer></script>
 <script>
+    (function(){
+        // Kích thước thiết kế gốc
+        const BASE_W = 430, BASE_H = 932;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const stage = document.getElementById('app-view-index');      // coi như "stage"
+            if (!stage) return;
+
+            // Wrapper lấy khung để fit (dùng container .pc-content của bạn)
+            const wrap = stage.closest('.pc-content') || stage.parentElement;
+
+            // đảm bảo stage có kích thước gốc & scale từ góc trên trái
+            Object.assign(stage.style, {
+                width:  BASE_W + 'px',
+                height: BASE_H + 'px',
+                transformOrigin: 'top left',
+                willChange: 'transform'
+            });
+
+            // căn giữa stage trong khung chứa (không làm thay đổi layout khác)
+            Object.assign(wrap.style, {
+                display: 'grid',
+                placeItems: 'center',
+                overflow: 'hidden'
+            });
+
+            function fit() {
+                const w = wrap.clientWidth  || window.innerWidth;
+                const h = wrap.clientHeight || window.innerHeight;
+                const sx = w / BASE_W;
+                const sy = h / BASE_H;
+                const s  = Math.min(sx, sy);
+                stage.style.transform = `scale(${s})`;
+            }
+
+            let t; const debounced = () => { clearTimeout(t); t = setTimeout(fit, 50); };
+            fit();
+            window.addEventListener('resize', debounced);
+            window.addEventListener('orientationchange', debounced);
+        });
+    })();
+</script>
+<script>
     (function ($) {
         const mq = '(max-width: 767.98px)';
 
