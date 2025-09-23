@@ -109,26 +109,6 @@ header, footer {
     -webkit-user-select: none;
 }
 
-/*.stage-wrap {*/
-/*    position: fixed;*/
-/*    inset: 0;*/
-/*    width: 100vw;*/
-/*    height: var(--app-vh, 100vh); !* fix 100vh trên iOS *!*/
-/*    display: grid;*/
-/*    place-items: center;*/
-/*    overflow: hidden;*/
-/*    background: #fff; !* nếu muốn nền trắng *!*/
-/*}*/
-
-/*#app-view-index {*/
-/*    width: 430px;   !* kích thước thiết kế gốc *!*/
-/*    height: 932px;*/
-/*    transform-origin: top left;*/
-/*    will-change: transform;*/
-/*}*/
-
-
-
 .stage-wrap{
     position: fixed;
     inset: 0;
@@ -177,7 +157,7 @@ nav a {
 
 #app-id {
     width: 450px;
-    height: 90vh;
+    /*height: 90vh;*/
     margin: auto;
     position: relative;
     border: 1px solid rgb(224, 224, 224);
@@ -1039,3 +1019,43 @@ img.heart-date {
 /*        bottom: 70px;*/
 /*    }*/
 /*}*/
+
+/*-----------------------------------------------------dèile-----------------------------------------------------*/
+
+
+/* ===== ≤ 430/428px — iPhone Pro Max/Plus đời mới ===== */
+/*@media (max-width: 430px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 34px !important; left: 14px !important; width: 404px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 232px !important; }*/
+/*}*/
+
+/*!* ===== ≤ 412px — nhiều Android / Pixel ===== *!*/
+/*@media (max-width: 412px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 32px !important; left: 12px !important; width: 388px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 222px !important; }*/
+/*}*/
+
+/*!* ===== ≤ 390px — iPhone 12/13/14/15 (6.1”) ===== *!*/
+/*@media (max-width: 390px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 30px !important; left: 10px !important; width: 366px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 212px !important; }*/
+/*}*/
+
+/*!* ===== ≤ 375px — iPhone 6/7/8/SE (2022) ===== *!*/
+/*@media (max-width: 375px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 28px !important; left: 10px !important; width: 348px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 202px !important; }*/
+/*}*/
+
+/*!* ===== ≤ 360px — Android nhỏ + iPhone mini ===== *!*/
+/*@media (max-width: 360px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 26px !important; left: 8px !important; width: 334px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 194px !important; }*/
+/*}*/
+
+/*!* ===== ≤ 320px — iPhone 5 / SE gen1 (cực nhỏ) ===== *!*/
+/*@media (max-width: 320px) {*/
+/*    [data-node-id="FTU0wNomev"] { top: 22px !important; left: 6px !important; width: 294px !important; }*/
+/*    [data-node-id="T2fdZThV5X"] { left: 172px !important; }*/
+/*}*/
+
