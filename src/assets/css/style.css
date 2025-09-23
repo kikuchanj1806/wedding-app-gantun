@@ -127,6 +127,8 @@ header, footer {
 /*    will-change: transform;*/
 /*}*/
 
+
+
 .stage-wrap{
     position: fixed;
     inset: 0;
@@ -142,8 +144,14 @@ header, footer {
 #app-view-index{
     width: 430px;
     height: 932px;
+    position: relative;        /* QUAN TRỌNG */
+    overflow: hidden;
     transform-origin: top left;
     will-change: transform;
+}
+
+.stage-wrap #blessing-box {
+    /*position: fixed !important;*/
 }
 
 @-webkit-keyframes mrotate-jsx-3319532958 {
