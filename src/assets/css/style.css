@@ -109,7 +109,7 @@ header, footer {
     -webkit-user-select: none;
 }
 
-.stage-wrap{
+.stage-wrap {
     position: fixed;
     inset: 0;
     width: 100vw;
@@ -120,7 +120,7 @@ header, footer {
     background: #fff; /* tuỳ bạn */
 }
 
-#app-view-index{
+#app-view-index {
     width: 430px;
     height: 932px;
     position: relative;
@@ -923,7 +923,10 @@ img.heart-date {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.toolbar-toggle-button svg { pointer-events: bounding-box; }
+
+.toolbar-toggle-button svg {
+    pointer-events: bounding-box;
+}
 
 .watermark.hide-toolbar-content.jsx-3116023621 {
     bottom: 70px;
@@ -982,8 +985,8 @@ img.heart-date {
 /* Một trái tim */
 .heart {
     position: absolute;
-    top: -40px;             /* bắt đầu trên đỉnh */
-    font-size: 24px;        /* sẽ scale bằng transform trong JS */
+    top: -40px; /* bắt đầu trên đỉnh */
+    font-size: 24px; /* sẽ scale bằng transform trong JS */
     opacity: 0.9;
     will-change: transform, opacity;
     animation: fall linear forwards;
@@ -991,9 +994,17 @@ img.heart-date {
 
 /* keyframes rơi */
 @keyframes fall {
-    0%   { transform: translate3d(var(--x, 0), -60px, 0) rotate(0deg) scale(var(--s,1)); opacity: 0; }
-    10%  { opacity: 1; }
-    100% { transform: translate3d(var(--x, 0), 110vh, 0) rotate(var(--r, 360deg)) scale(var(--s,1)); opacity: 0; }
+    0% {
+        transform: translate3d(var(--x, 0), -60px, 0) rotate(0deg) scale(var(--s, 1));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--x, 0), 110vh, 0) rotate(var(--r, 360deg)) scale(var(--s, 1));
+        opacity: 0;
+    }
 }
 
 /*-----------------------------------------------------end-toolbar-toggle-button-----------------------------------------------------*/
@@ -1025,105 +1036,1293 @@ img.heart-date {
 /* ===== ≤ 430/428px — iPhone Pro Max/Plus đời mới ===== */
 @media (max-width: 430px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 44px !important;           /* 40 * (932/844) ≈ 44.17 */
-        left: 17.6px !important;        /* 16 * (430/390) ≈ 17.64 */
-        width: 404px !important;        /* 366 * (430/390) ≈ 403.54 */
+        top: 35.021px !important;
+        left: 15.48px !important;
+        width: 399.04px !important;
+        font-size: 18.06px !important;
     }
+
     [data-node-id="8DVvrx8i3i"] {
-        left: 235px !important;         /* 213 * (430/390) ≈ 234.85 */
+        top: 101.791px !important;
+        left: 246.82px !important;
+        width: 159.1px !important;
+        font-size: 15.48px !important;
     }
+
     [data-node-id="DGNPrh8TMJ"] {
-        top: 80.4px !important;         /* 72.8397 * (932/844) ≈ 80.43 */
-        left: 209.5px !important;       /* 190 * (430/390) ≈ 209.49 */
-        width: 210.4px !important;      /* 190.8 * (430/390) ≈ 210.37 */
+        top: 69.6024px !important;
+        left: 223.6px !important;
+        width: 182.32px !important;
+        font-size: 15.48px !important;
+    }
+
+    [data-node-id="Mq6AYw_UlA"] {
+        top: 165.012px !important;
+        left: 95.7791px !important;
+        width: 297.434px !important;
+        height: 48.1637px !important;
+    }
+
+    [data-node-id="TpabLV3dlH"] {
+        top: 193.963px !important;
+        left: 83.4983px !important;
+        width: 262.85px !important;
+        height: 367.617px !important;
+    }
+
+    [data-node-id="5yFiENjpcL"] {
+        top: 268.605px !important;
+        left: 123.39px !important;
+        width: 257.879px !important;
+        height: 48.1637px !important;
+    }
+
+    [data-node-id="LLG1XHSRQL"] {
+        top: 343.563px !important;
+        left: 87.5136px !important;
+        width: 297.434px !important;
+        height: 48.1637px !important;
+    }
+
+    [data-node-id="WxMliz28Qr"] {
+        top: 495.572px !important;
+        left: 4.70041px !important;
+        width: 52.7198px !important;
+        height: 55.3659px !important;
+    }
+
+    [data-node-id="3K7j037vEw"] {
+        top: 434.476px !important;
+        left: 4.0936px !important;
+        width: 297.434px !important;
+        height: 48.1637px !important;
+    }
+
+    [data-node-id="qjOtgRHvZJ"] {
+        top: 588.24px !important;
+        left: 53.75px !important;
+        width: 322.5px !important;
+        font-size: 18.92px !important;
+    }
+
+    [data-node-id="fLoHeWrlPm"] {
+        top: 622.585px !important;
+        left: 104.49px !important;
+        width: 220.848px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="WVs6ZIAMra"] {
+        top: 737.88px !important;
+        left: 67.811px !important;
+        width: 184.556px !important;
+        font-size: 18.92px !important;
+    }
+
+    [data-node-id="MK4pS2Wv7q"] {
+        top: 769.154px !important;
+        left: 238.263px !important;
+        width: 72.326px !important;
+        font-size: 12.9px !important;
+    }
+
+    [data-node-id="7rHh5znagH"] {
+        top: 700.82px !important;
+        left: 26.058px !important;
+        width: 377.626px !important;
+        height: 171.017px !important;
+    }
+
+    [data-node-id="VJ6fMy9k_X"] {
+        top: 717.679px !important;
+        left: 308.791px !important;
+        width: 67.4592px !important;
+        height: 68.628px !important;
+    }
+
+    [data-node-id="lYE9iFIqJQ"] {
+        top: 947.806px !important;
+        left: 44.077px !important;
+        width: 344.426px !important;
+        height: 586.084px !important;
+    }
+
+    [data-node-id="v5Qoq1R1YF"] {
+        top: 927.458px !important;
+        left: 147.497px !important;
+        width: 86.1281px !important;
+        height: 40.7296px !important;
+    }
+
+    [data-node-id="QNt7xrVr20"] {
+        top: 4935.52px !important;
+        left: 180.692px !important;
+        width: 96.8506px !important;
+        height: 45.8229px !important;
+    }
+
+    [data-node-id="YvvXyrNhpV"] {
+        top: 1027.23px !important;
+        left: 62.9572px !important;
+        width: 139.722px !important;
+        height: 192.554px !important;
+    }
+
+    [data-node-id="6PBsHepbiJ"] {
+        top: 1027.23px !important;
+        left: 229.792px !important;
+        width: 138.918px !important;
+        height: 191.701px !important;
+    }
+
+    [data-node-id="C86Jqx8nmQ"] {
+        top: 1245.28px !important;
+        left: 67.467px !important;
+        width: 73.014px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="L408NwhpCS"] {
+        top: 1288.19px !important;
+        left: 63.64px !important;
+        width: 320.006px !important;
+        font-size: 18.92px !important;
+    }
+
+    [data-node-id="3voiDMuRQn"] {
+        top: 1455.47px !important;
+        left: 65.446px !important;
+        width: 274.426px !important;
+        font-size: 18.92px !important;
+    }
+
+    [data-node-id="Ys2Yn99Nxi"] {
+        top: 1570.59px !important;
+        left: 21.801px !important;
+        width: 22.274px !important;
+        font-size: 44.72px !important;
+    }
+
+    [data-node-id="ygt5arpaUu"] {
+        top: 1613.68px !important;
+        left: 47.773px !important;
+        width: 334.11px !important;
+        font-size: 27.52px !important;
+    }
+
+    [data-node-id="slZJUAXh3Z"] {
+        top: 1665.51px !important;
+        left: 328.763px !important;
+        width: 22.274px !important;
+        font-size: 44.72px !important;
+    }
+
+    [data-node-id="eVrOsJuCFb"] {
+        top: 1747.13px !important;
+        left: 43.6197px !important;
+        width: 350.475px !important;
+        height: 126.362px !important;
+    }
+
+    [data-node-id="a0C_cf_Ri-"] {
+        top: 1885.19px !important;
+        left: 146.931px !important;
+        width: 135.794px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="hVqc6xXzlE"] {
+        top: 1957.82px !important;
+        left: 89.612px !important;
+        width: 308.74px !important;
+        font-size: 29.24px !important;
+    }
+
+    [data-node-id="hureKsvTgR"] {
+        top: 2120.3px !important;
+        left: 60.243px !important;
+        width: 317.168px !important;
+        height: 211.661px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="mxRXWQrJTf"] {
+        top: 2369.33px !important;
+        left: 33.4828px !important;
+        width: 181.374px !important;
+        height: 193.147px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="qdY1tB1nmX"] {
+        top: 2353.77px !important;
+        left: 229.076px !important;
+        width: 176.472px !important;
+        height: 252.079px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="J8X21VDQA6"] {
+        top: 2585.86px !important;
+        left: 32.938px !important;
+        width: 372.982px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="t41jUnGSQ_"] {
+        top: 2662.44px !important;
+        left: 32.594px !important;
+        width: 372.982px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="ED_96l2vMX"] {
+        top: 2753.72px !important;
+        left: 60.888px !important;
+        width: 315.362px !important;
+        height: 210.455px !important;
+    }
+
+    [data-node-id="FTU0wNomev"] {
+        top: 3023.24px !important;
+        left: 93.912px !important;
+        width: 263.848px !important;
+        height: 50.482px !important;
+        font-size: 13.76px !important;
+    }
+
+    [data-node-id="b8_bFX8T7v"] {
+        top: 3148.28px !important;
+        left: 146.974px !important;
+        width: 135.794px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="CMSxnQHHl4"] {
+        top: 3223.41px !important;
+        left: 28.509px !important;
+        width: 380.034px !important;
+        font-size: 29.24px !important;
+    }
+
+    [data-node-id="g-QPAy6bxK"] {
+        top: 3399.47px !important;
+        left: 61.361px !important;
+        width: 314.33px !important;
+        height: 209.767px !important;
+    }
+
+    [data-node-id="GUu5SIVMpM"] {
+        top: 3632.85px !important;
+        left: 15.48px !important;
+        width: 164.587px !important;
+        height: 226.571px !important;
+    }
+
+    [data-node-id="_WyToo33yl"] {
+        top: 3659.55px !important;
+        left: 194.894px !important;
+        width: 213.572px !important;
+        height: 282.058px !important;
+    }
+
+    [data-node-id="ppz26g2MvO"] {
+        top: 3897.2px !important;
+        left: 15.652px !important;
+        width: 150.672px !important;
+        font-size: 22.36px !important;
+    }
+
+    [data-node-id="yeGPArVJ6a"] {
+        top: 4019.24px !important;
+        left: 60.2px !important;
+        width: 308.482px !important;
+        height: 205.235px !important;
+    }
+
+    [data-node-id="O9tlEgBcrI"] {
+        top: 4317.37px !important;
+        left: 47.816px !important;
+        width: 355.094px !important;
+        font-size: 30.96px !important;
+    }
+
+    [data-node-id="awGCb56SRG"] {
+        top: 4275.13px !important;
+        left: 19.909px !important;
+        width: 22.274px !important;
+        font-size: 44.72px !important;
+    }
+
+    [data-node-id="Ca3d01wHCd"] {
+        top: 4386.22px !important;
+        left: 350.066px !important;
+        width: 22.274px !important;
+        font-size: 44.72px !important;
+        transform: rotate(188.807deg) !important;
+    }
+
+    [data-node-id="crvqJMS7oV"] {
+        top: 4468.2px !important;
+        left: 31.9199px !important;
+        width: 353.816px !important;
+        height: 127.374px !important;
+        transform: rotate(346.2deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="VTpWtb4Lz0"] {
+        top: 4691.91px !important;
+        left: 8.858px !important;
+        width: 412.8px !important;
+        font-size: 28.38px !important;
+    }
+
+    [data-node-id="KVmslMs17t"] {
+        top: 4632.96px !important;
+        left: 139.578px !important;
+        width: 152.736px !important;
+        font-size: 17.2px !important;
+        background-color: rgb(125, 0, 0) !important;
+        color: #fff !important;
+    }
+
+    [data-node-id="eH0GlpfO2p"] {
+        top: 4972.18px !important;
+        left: 41.9141px !important;
+        width: 343.574px !important;
+        height: 704.289px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="OVGH1QvuS8"] {
+        top: 4951.84px !important;
+        left: 147.509px !important;
+        width: 86.1281px !important;
+        height: 40.7296px !important;
+        transform: rotate(84.6622deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="nYAJPv9dQi"] {
+        top: 5062.46px !important;
+        left: 73.186px !important;
+        width: 283.284px !important;
+        height: 264.398px !important;
+        font-size: 12.04px !important;
+    }
+
+    [data-node-id="Eox2Wm_cAF"] {
+        top: 5560.98px !important;
+        left: 58.996px !important;
+        width: 130.376px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="tJZuBeUY36"] {
+        top: 5560.97px !important;
+        left: 238.306px !important;
+        width: 130.376px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="n52hQPhf2V"] {
+        top: 5606.67px !important;
+        left: 61.748px !important;
+        width: 147.06px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="dLZpHLLVzl"] {
+        top: 5606.67px !important;
+        left: 228.588px !important;
+        width: 147.06px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="TSLY-dzZH9"] {
+        top: 5762.31px !important;
+        left: 148.049px !important;
+        width: 155.488px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="i3uhnnNooT"] {
+        top: 5822.35px !important;
+        left: 38.2769px !important;
+        width: 367.643px !important;
+        font-size: 30.1px !important;
+    }
+
+    [data-node-id="lf7DlEleWn"] {
+        top: 5955.7px !important;
+        left: 235.903px !important;
+        width: 193.872px !important;
+        height: 256.287px !important;
+    }
+
+    [data-node-id="SFhKJFwPlV"] {
+        top: 6032.27px !important;
+        left: 0px !important;
+        width: 219.386px !important;
+        height: 286.94px !important;
+    }
+
+    [data-node-id="WYa6j8DJXy"] {
+        top: 6227.8px !important;
+        left: 264.536px !important;
+        width: 150.672px !important;
+        font-size: 22.36px !important;
+    }
+
+    [data-node-id="l30VVvqqFs"] {
+        top: 6386.94px !important;
+        left: 53.793px !important;
+        width: 326.542px !important;
+        height: 231.911px !important;
+    }
+
+    [data-node-id="bCCeKkWkF2"] {
+        top: 6768.78px !important;
+        left: 41.4798px !important;
+        width: 343.918px !important;
+        height: 433.843px !important;
+    }
+
+    [data-node-id="HFC5222DEM"] {
+        top: 6713.18px !important;
+        left: 47.472px !important;
+        width: 13.846px !important;
+        height: 13.846px !important;
+    }
+
+    [data-node-id="4ZkmPd2eYe"] {
+        top: 6727.01px !important;
+        left: 65.188px !important;
+        width: 18.318px !important;
+        height: 18.318px !important;
+    }
+
+    [data-node-id="rQDhOyKwMM"] {
+        top: 6736.12px !important;
+        left: 73.186px !important;
+        width: 172px !important;
+        height: 66.3665px !important;
+    }
+
+    [data-node-id="wl_Og3GtdG"] {
+        top: 6758.53px !important;
+        left: 85.613px !important;
+        width: 132.87px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="QSSXyOmpLx"] {
+        top: 6802.51px !important;
+        left: 83.334px !important;
+        width: 292.142px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="6HEXXw35Jz"] {
+        top: 6820.67px !important;
+        left: 53.664px !important;
+        width: 18.662px !important;
+        height: 16.7736px !important;
+    }
+
+    [data-node-id="sioRwNWkXR"] {
+        top: 6867.01px !important;
+        left: 82.517px !important;
+        width: 292.142px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="kL5h0KzS4y"] {
+        top: 6885.13px !important;
+        left: 54.524px !important;
+        width: 18.662px !important;
+        height: 16.7736px !important;
+    }
+
+    [data-node-id="gv0-_126Yt"] {
+        top: 6934.95px !important;
+        left: 82.517px !important;
+        width: 292.142px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="oyTy8daAPR"] {
+        top: 6953.11px !important;
+        left: 54.524px !important;
+        width: 18.662px !important;
+        height: 16.7736px !important;
+    }
+
+    [data-node-id="lq7e_mC9q5"] {
+        top: 7002.89px !important;
+        left: 82.474px !important;
+        width: 292.142px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="A15Bk_AN1o"] {
+        top: 7012.15px !important;
+        left: 54.524px !important;
+        width: 18.662px !important;
+        height: 16.7736px !important;
+    }
+
+    [data-node-id="GvaZY4Sm8e"] {
+        top: 7057.07px !important;
+        left: 83.334px !important;
+        width: 292.142px !important;
+        font-size: 14.62px !important;
+    }
+
+    [data-node-id="wrOzhE6oIq"] {
+        top: 7067.57px !important;
+        left: 56.115px !important;
+        width: 18.662px !important;
+        height: 16.7736px !important;
+    }
+
+    [data-node-id="sL37ux1WVx"] {
+        top: 7269.36px !important;
+        left: 52.89px !important;
+        width: 324.22px !important;
+        font-size: 22.36px !important;
+    }
+
+    [data-node-id="5XGGfTPbPw"] {
+        top: 7352.54px !important;
+        left: 61.3742px !important;
+        width: 308.482px !important;
+        height: 205.654px !important;
+    }
+
+    [data-node-id="srNSStm5o5"] {
+        top: 7603.78px !important;
+        left: 9.546px !important;
+        width: 412.8px !important;
+        font-size: 17.2px !important;
+    }
+
+    [data-node-id="SE_w-MTduA"] {
+        top: 7767.75px !important;
+        left: 178.493px !important;
+        width: 75.508px !important;
+        height: 45.3947px !important;
+    }
+
+    [data-node-id="bEaizW2w7R"] {
+        top: 7843.98px !important;
+        left: 9.546px !important;
+        width: 412.8px !important;
+        font-size: 41.28px !important;
+    }
+
+    [data-node-id="qrwDf_Hqbf"] {
+        top: 7131.04px !important;
+        left: 74.82px !important;
+        width: 127.022px !important;
+        height: 35.0405px !important;
+        font-size: 13.76px !important;
+    }
+
+    [data-node-id="T2fdZThV5X"] {
+        top: 7131.01px !important;
+        left: 228.803px !important;
+        width: 127.022px !important;
+        height: 35.0405px !important;
+        font-size: 13.76px !important;
+    }
+
+    [data-node-id="T2fdZThJHT"] {
+        top: 5346.06px !important;
     }
 }
 
 /*!* ===== ≤ 412px — nhiều Android / Pixel ===== *!*/
 @media (max-width: 412px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 43.4px !important;         /* 40 * (915/844) ≈ 43.36 */
-        left: 16.9px !important;        /* 16 * (412/390) ≈ 16.90 */
-        width: 386.7px !important;      /* 366 * (412/390) ≈ 386.65 */
+        top: 43.4px !important; /* 40 * (915/844) ≈ 43.36 */
+        left: 16.9px !important; /* 16 * (412/390) ≈ 16.90 */
+        width: 386.7px !important; /* 366 * (412/390) ≈ 386.65 */
     }
+
     [data-node-id="8DVvrx8i3i"] {
-        left: 224px !important;         /* 213 * (412/390) ≈ 225.02 */
+        left: 224px !important; /* 213 * (412/390) ≈ 225.02 */
     }
+
     [data-node-id="DGNPrh8TMJ"] {
-        top: 79px !important;           /* 72.8397 * (915/844) ≈ 78.97 */
-        left: 200.7px !important;       /* 190 * (412/390) ≈ 200.72 */
-        width: 201.6px !important;      /* 190.8 * (412/390) ≈ 201.56 */
+        top: 79px !important; /* 72.8397 * (915/844) ≈ 78.97 */
+        left: 200.7px !important; /* 190 * (412/390) ≈ 200.72 */
+        width: 201.6px !important; /* 190.8 * (412/390) ≈ 201.56 */
     }
 }
 
 /* ===== ≤ 390px — iPhone 12/13/14/15 (6.1”) ===== */
 @media (max-width: 390px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 40px !important;
-        left: 16px !important;
-        width: 366px !important;
+        top: 31.77px !important;
+        left: 14.03px !important;
+        width: 361.90px !important;
+        font-size: 16.39px !important;
     }
 
     [data-node-id="8DVvrx8i3i"] {
-        left: 213px !important;
+        top: 92.35px !important;
+        left: 223.90px !important;
+        width: 144.40px !important;
+        font-size: 14.04px !important;
     }
 
     [data-node-id="DGNPrh8TMJ"] {
-        top: 72.8397px !important;
-        left: 190px !important;
-        width: 190.8px !important;
+        top: 63.18px !important;
+        left: 202.80px !important;
+        width: 165.40px !important;
+        font-size: 14.04px !important;
+    }
+
+    [data-node-id="Mq6AYw_UlA"] {
+        top: 149.68px !important;
+        left: 86.91px !important;
+        width: 269.81px !important;
+        height: 43.68px !important;
+    }
+
+    [data-node-id="TpabLV3dlH"] {
+        top: 176.04px !important;
+        left: 75.73px !important;
+        width: 238.34px !important;
+        height: 333.35px !important;
+    }
+
+    [data-node-id="5yFiENjpcL"] {
+        top: 243.69px !important;
+        left: 111.88px !important;
+        width: 234.02px !important;
+        height: 43.68px !important;
+    }
+
+    [data-node-id="LLG1XHSRQL"] {
+        top: 311.61px !important;
+        left: 79.35px !important;
+        width: 269.81px !important;
+        height: 43.68px !important;
+    }
+
+    [data-node-id="WxMliz28Qr"] {
+        top: 449.44px !important;
+        left: 4.27px !important;
+        width: 47.81px !important;
+        height: 50.19px !important;
+    }
+    [data-node-id="3K7j037vEw"] {
+        top: 394.12px !important;
+        left: 3.71px !important;
+        width: 269.87px !important;
+        height: 43.69px !important;
+    }
+
+    [data-node-id="qjOtgRHvZJ"] {
+        top: 533.33px !important;
+        left: 48.77px !important;
+        width: 292.58px !important;
+        font-size: 17.16px !important;
+    }
+
+    [data-node-id="fLoHeWrlPm"] {
+        top: 564.89px !important;
+        left: 94.75px !important;
+        width: 200.34px !important;
+        font-size: 13.25px !important;
+    }
+
+    [data-node-id="WVs6ZIAMra"] {
+        top: 668.79px !important;
+        left: 61.51px !important;
+        width: 167.32px !important;
+        font-size: 17.16px !important;
+    }
+
+    [data-node-id="MK4pS2Wv7q"] {
+        top: 697.78px !important;
+        left: 215.99px !important;
+        width: 65.57px !important;
+        font-size: 11.71px !important;
+    }
+
+    [data-node-id="7rHh5znagH"] {
+        top: 635.67px !important;
+        left: 23.63px !important;
+        width: 342.43px !important;
+        height: 155.13px !important;
+    }
+
+    [data-node-id="VJ6fMy9k_X"] {
+        top: 651.09px !important;
+        left: 280.09px !important;
+        width: 61.24px !important;
+        height: 62.25px !important;
+    }
+
+    [data-node-id="lYE9iFIqJQ"] {
+        top: 859.56px !important;
+        left: 39.98px !important;
+        width: 312.29px !important;
+        height: 531.30px !important;
+    }
+
+    [data-node-id="v5Qoq1R1YF"] {
+        top: 841.09px !important;
+        left: 133.76px !important;
+        width: 78.20px !important;
+        height: 36.95px !important;
+    }
+
+    [data-node-id="QNt7xrVr20"] {
+        top: 4474.50px !important;
+        left: 163.88px !important;
+        width: 87.89px !important;
+        height: 41.55px !important;
+    }
+
+    [data-node-id="YvvXyrNhpV"] {
+        top: 930.93px !important;
+        left: 57.10px !important;
+        width: 126.73px !important;
+        height: 174.72px !important;
+    }
+
+    [data-node-id="6PBsHepbiJ"] {
+        top: 930.93px !important;
+        left: 208.34px !important;
+        width: 125.98px !important;
+        height: 173.95px !important;
+    }
+
+    [data-node-id="C86Jqx8nmQ"] {
+        top: 1128.63px !important;
+        left: 61.17px !important;
+        width: 66.28px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="L408NwhpCS"] {
+        top: 1167.20px !important;
+        left: 57.72px !important;
+        width: 290.27px !important;
+        font-size: 17.16px !important;
+    }
+
+    [data-node-id="3voiDMuRQn"] {
+        top: 1319.86px !important;
+        left: 59.32px !important;
+        width: 248.73px !important;
+        font-size: 17.16px !important;
+    }
+    [data-node-id="Ys2Yn99Nxi"] {
+        top: 1424.57px !important;
+        left: 19.77px !important;
+        width: 20.20px !important;
+        font-size: 40.55px !important;
+    }
+
+    [data-node-id="ygt5arpaUu"] {
+        top: 1463.67px !important;
+        left: 43.33px !important;
+        width: 302.98px !important;
+        font-size: 24.95px !important;
+    }
+
+    [data-node-id="slZJUAXh3Z"] {
+        top: 1510.34px !important;
+        left: 298.20px !important;
+        width: 20.20px !important;
+        font-size: 40.55px !important;
+    }
+
+    [data-node-id="eVrOsJuCFb"] {
+        top: 1583.88px !important;
+        left: 39.57px !important;
+        width: 318.03px !important;
+        height: 114.61px !important;
+    }
+
+    [data-node-id="a0C_cf_Ri-"] {
+        top: 1709.55px !important;
+        left: 133.27px !important;
+        width: 123.15px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="hVqc6xXzlE"] {
+        top: 1775.67px !important;
+        left: 81.22px !important;
+        width: 279.96px !important;
+        font-size: 26.53px !important;
+    }
+
+    [data-node-id="hureKsvTgR"] {
+        top: 1921.89px !important;
+        left: 54.63px !important;
+        width: 287.71px !important;
+        height: 191.97px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="mxRXWQrJTf"] {
+        top: 2149.29px !important;
+        left: 30.35px !important;
+        width: 164.64px !important;
+        height: 175.16px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="qdY1tB1nmX"] {
+        top: 2135.01px !important;
+        left: 207.68px !important;
+        width: 160.03px !important;
+        height: 228.59px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="J8X21VDQA6"] {
+        top: 2346.52px !important;
+        left: 29.85px !important;
+        width: 338.33px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="t41jUnGSQ_"] {
+        top: 2415.47px !important;
+        left: 29.56px !important;
+        width: 338.33px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="ED_96l2vMX"] {
+        top: 2495.69px !important;
+        left: 55.24px !important;
+        width: 286.07px !important;
+        height: 190.90px !important;
+    }
+
+    [data-node-id="FTU0wNomev"] {
+        top: 2741.73px !important;
+        left: 85.19px !important;
+        width: 239.30px !important;
+        height: 45.78px !important;
+        font-size: 12.47px !important;
+    }
+
+    [data-node-id="b8_bFX8T7v"] {
+        top: 2856.82px !important;
+        left: 133.31px !important;
+        width: 123.15px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="CMSxnQHHl4"] {
+        top: 2923.89px !important;
+        left: 25.85px !important;
+        width: 344.64px !important;
+        font-size: 26.53px !important;
+    }
+
+    [data-node-id="g-QPAy6bxK"] {
+        top: 3083.19px !important;
+        left: 55.62px !important;
+        width: 285.05px !important;
+        height: 190.26px !important;
+    }
+
+    [data-node-id="GUu5SIVMpM"] {
+        top: 3295.32px !important;
+        left: 14.04px !important;
+        width: 149.26px !important;
+        height: 205.55px !important;
+    }
+
+    [data-node-id="_WyToo33yl"] {
+        top: 3319.87px !important;
+        left: 176.80px !important;
+        width: 193.73px !important;
+        height: 255.83px !important;
+    }
+
+    [data-node-id="ppz26g2MvO"] {
+        top: 3534.55px !important;
+        left: 14.19px !important;
+        width: 136.57px !important;
+        font-size: 20.27px !important;
+    }
+
+    [data-node-id="yeGPArVJ6a"] {
+        top: 3645.48px !important;
+        left: 54.59px !important;
+        width: 279.77px !important;
+        height: 186.07px !important;
+    }
+
+    [data-node-id="O9tlEgBcrI"] {
+        top: 3916.62px !important;
+        left: 43.37px !important;
+        width: 321.89px !important;
+        font-size: 28.07px !important;
+    }
+    [data-node-id="awGCb56SRG"] {
+        top: 3877.24px !important;
+        left: 18.05px !important;
+        width: 20.20px !important;
+        font-size: 40.55px !important;
+    }
+
+    [data-node-id="Ca3d01wHCd"] {
+        top: 3975.61px !important;
+        left: 317.59px !important;
+        width: 20.20px !important;
+        font-size: 40.55px !important;
+        transform: rotate(188.807deg) !important;
+    }
+
+    [data-node-id="crvqJMS7oV"] {
+        top: 4052.39px !important;
+        left: 28.94px !important;
+        width: 320.85px !important;
+        height: 115.54px !important;
+        transform: rotate(346.2deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="VTpWtb4Lz0"] {
+        top: 4256.07px !important;
+        left: 8.03px !important;
+        width: 374.35px !important;
+        font-size: 25.73px !important;
+    }
+
+    [data-node-id="KVmslMs17t"] {
+        top: 4201.34px !important;
+        left: 126.61px !important;
+        width: 138.54px !important;
+        font-size: 15.60px !important;
+        background-color: rgb(125, 0, 0) !important;
+        color: #fff !important;
+    }
+
+    [data-node-id="eH0GlpfO2p"] {
+        top: 4507.09px !important;
+        left: 38.01px !important;
+        width: 311.51px !important;
+        height: 639.11px !important;
+        transform: rotate(0deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="OVGH1QvuS8"] {
+        top: 4488.88px !important;
+        left: 133.75px !important;
+        width: 78.11px !important;
+        height: 36.95px !important;
+        transform: rotate(84.6622deg) scale(1, 1) !important;
+    }
+
+    [data-node-id="nYAJPv9dQi"] {
+        top: 4591.21px !important;
+        left: 66.39px !important;
+        width: 256.85px !important;
+        height: 239.70px !important;
+        font-size: 10.91px !important;
+    }
+
+    [data-node-id="Eox2Wm_cAF"] {
+        top: 5042.16px !important;
+        left: 53.50px !important;
+        width: 118.24px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="tJZuBeUY36"] {
+        top: 5042.15px !important;
+        left: 215.98px !important;
+        width: 118.24px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="n52hQPhf2V"] {
+        top: 5082.74px !important;
+        left: 55.97px !important;
+        width: 133.42px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="dLZpHLLVzl"] {
+        top: 5082.74px !important;
+        left: 207.27px !important;
+        width: 133.42px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="TSLY-dzZH9"] {
+        top: 5222.35px !important;
+        left: 134.28px !important;
+        width: 141.00px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="i3uhnnNooT"] {
+        top: 5278.19px !important;
+        left: 34.73px !important;
+        width: 333.35px !important;
+        font-size: 27.31px !important;
+    }
+
+    [data-node-id="lf7DlEleWn"] {
+        top: 5396.06px !important;
+        left: 213.99px !important;
+        width: 175.81px !important;
+        height: 232.52px !important;
+    }
+
+    [data-node-id="SFhKJFwPlV"] {
+        top: 5466.31px !important;
+        left: 0px !important;
+        width: 199.01px !important;
+        height: 260.35px !important;
+    }
+
+    [data-node-id="WYa6j8DJXy"] {
+        top: 5650.41px !important;
+        left: 239.87px !important;
+        width: 136.57px !important;
+        font-size: 20.27px !important;
+    }
+
+    [data-node-id="l30VVvqqFs"] {
+        top: 5789.36px !important;
+        left: 48.80px !important;
+        width: 296.06px !important;
+        height: 210.47px !important;
+    }
+
+    [data-node-id="bCCeKkWkF2"] {
+        top: 6139.38px !important;
+        left: 37.63px !important;
+        width: 311.82px !important;
+        height: 393.73px !important;
+    }
+
+    [data-node-id="HFC5222DEM"] {
+        top: 6085.64px !important;
+        left: 43.05px !important;
+        width: 12.56px !important;
+        height: 12.56px !important;
+    }
+
+    [data-node-id="4ZkmPd2eYe"] {
+        top: 6098.77px !important;
+        left: 59.12px !important;
+        width: 16.60px !important;
+        height: 16.60px !important;
+    }
+
+    [data-node-id="rQDhOyKwMM"] {
+        top: 6107.92px !important;
+        left: 66.39px !important;
+        width: 156.02px !important;
+        height: 60.16px !important;
+    }
+    [data-node-id="wl_Og3GtdG"] {
+        top: 6127.91px !important;
+        left: 77.63px !important;
+        width: 120.52px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="QSSXyOmpLx"] {
+        top: 6168.47px !important;
+        left: 75.56px !important;
+        width: 265.00px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="6HEXXw35Jz"] {
+        top: 6184.57px !important;
+        left: 48.67px !important;
+        width: 16.93px !important;
+        height: 15.21px !important;
+    }
+
+    [data-node-id="sioRwNWkXR"] {
+        top: 6227.88px !important;
+        left: 74.80px !important;
+        width: 265.00px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="kL5h0KzS4y"] {
+        top: 6244.89px !important;
+        left: 49.44px !important;
+        width: 16.93px !important;
+        height: 15.21px !important;
+    }
+
+    [data-node-id="gv0-_126Yt"] {
+        top: 6292.87px !important;
+        left: 74.80px !important;
+        width: 265.00px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="oyTy8daAPR"] {
+        top: 6309.87px !important;
+        left: 49.44px !important;
+        width: 16.93px !important;
+        height: 15.21px !important;
+    }
+
+    [data-node-id="lq7e_mC9q5"] {
+        top: 6355.09px !important;
+        left: 74.76px !important;
+        width: 265.00px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="A15Bk_AN1o"] {
+        top: 6363.97px !important;
+        left: 49.44px !important;
+        width: 16.93px !important;
+        height: 15.21px !important;
+    }
+
+    [data-node-id="GvaZY4Sm8e"] {
+        top: 6401.81px !important;
+        left: 75.56px !important;
+        width: 265.00px !important;
+        font-size: 13.26px !important;
+    }
+
+    [data-node-id="wrOzhE6oIq"] {
+        top: 6411.97px !important;
+        left: 50.90px !important;
+        width: 16.93px !important;
+        height: 15.21px !important;
+    }
+
+    [data-node-id="sL37ux1WVx"] {
+        top: 6593.05px !important;
+        left: 47.90px !important;
+        width: 293.96px !important;
+        font-size: 20.27px !important;
+    }
+
+    [data-node-id="5XGGfTPbPw"] {
+        top: 6661.15px !important;
+        left: 55.61px !important;
+        width: 279.65px !important;
+        height: 186.37px !important;
+    }
+
+    [data-node-id="srNSStm5o5"] {
+        top: 6903.44px !important;
+        left: 8.67px !important;
+        width: 374.35px !important;
+        font-size: 15.60px !important;
+    }
+
+    [data-node-id="SE_w-MTduA"] {
+        top: 7049.44px !important;
+        left: 161.80px !important;
+        width: 68.48px !important;
+        height: 41.16px !important;
+    }
+
+    [data-node-id="bEaizW2w7R"] {
+        top: 7118.64px !important;
+        left: 8.67px !important;
+        width: 374.35px !important;
+        font-size: 37.43px !important;
+    }
+
+    [data-node-id="qrwDf_Hqbf"] {
+        top: 6465.86px !important;
+        left: 67.83px !important;
+        width: 115.23px !important;
+        height: 31.80px !important;
+        font-size: 12.47px !important;
+    }
+
+    [data-node-id="T2fdZThV5X"] {
+        top: 6465.83px !important;
+        left: 207.52px !important;
+        width: 115.23px !important;
+        height: 31.80px !important;
+        font-size: 12.47px !important;
+    }
+
+    [data-node-id="T2fdZThJHT"] {
+        top: 4843.88px !important;
+        left: 61.54px !important;
+        width: 268.73px !important;
+        height: 174.55px !important;
     }
 }
 
 /*!* ===== ≤ 375px — iPhone 6/7/8/SE (2022) ===== *!*/
 @media (max-width: 375px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 24px !important;           /* 40 * (667/844) ≈ 31.61 → (tuỳ bạn có thể để 31.6px;
-                                       nhưng nhiều team sẽ rút xuống 24–32px cho cân mắt) */
-        left: 15.4px !important;        /* 16 * (375/390) ≈ 15.38 */
-        width: 352px !important;        /* 366 * (375/390) ≈ 351.92 */
+        top: 24px !important;
+        /* 40 * (667/844) ≈ 31.61 → (tuỳ bạn có thể để 31.6px;
+                                    nhưng nhiều team sẽ rút xuống 24–32px cho cân mắt) */
+        left: 15.4px !important; /* 16 * (375/390) ≈ 15.38 */
+        width: 352px !important; /* 366 * (375/390) ≈ 351.92 */
     }
+
     [data-node-id="8DVvrx8i3i"] {
-        left: 204px !important;         /* 213 * (375/390) ≈ 203.85 */
+        left: 204px !important; /* 213 * (375/390) ≈ 203.85 */
     }
+
     [data-node-id="DGNPrh8TMJ"] {
-        top: 57.6px !important;         /* 72.8397 * (667/844) ≈ 57.56 */
-        left: 182.7px !important;       /* 190 * (375/390) ≈ 182.69 */
-        width: 183.5px !important;      /* 190.8 * (375/390) ≈ 183.46 */
+        top: 57.6px !important; /* 72.8397 * (667/844) ≈ 57.56 */
+        left: 182.7px !important; /* 190 * (375/390) ≈ 182.69 */
+        width: 183.5px !important; /* 190.8 * (375/390) ≈ 183.46 */
     }
 }
 
 /*!* ===== ≤ 360px — Android nhỏ + iPhone mini ===== *!*/
 @media (max-width: 360px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 27.7px !important;         /* 40 * (780/844) ≈ 36.97 → (có thể rút về 28–32px cho cân) */
-        left: 14.8px !important;        /* 16 * (360/390) ≈ 14.77 */
-        width: 338px !important;        /* 366 * (360/390) ≈ 337.85 */
+        top: 27.7px !important; /* 40 * (780/844) ≈ 36.97 → (có thể rút về 28–32px cho cân) */
+        left: 14.8px !important; /* 16 * (360/390) ≈ 14.77 */
+        width: 338px !important; /* 366 * (360/390) ≈ 337.85 */
     }
+
     [data-node-id="8DVvrx8i3i"] {
-        left: 196.6px !important;       /* 213 * (360/390) ≈ 196.62 */
+        left: 196.6px !important; /* 213 * (360/390) ≈ 196.62 */
     }
+
     [data-node-id="DGNPrh8TMJ"] {
-        top: 67.3px !important;         /* 72.8397 * (780/844) ≈ 67.32 */
-        left: 175.4px !important;       /* 190 * (360/390) ≈ 175.38 */
-        width: 176.1px !important;      /* 190.8 * (360/390) ≈ 176.12 */
+        top: 67.3px !important; /* 72.8397 * (780/844) ≈ 67.32 */
+        left: 175.4px !important; /* 190 * (360/390) ≈ 175.38 */
+        width: 176.1px !important; /* 190.8 * (360/390) ≈ 176.12 */
     }
 }
 
 /*!* ===== ≤ 320px — iPhone 5 / SE gen1 (cực nhỏ) ===== *!*/
 @media (max-width: 320px) {
     [data-node-id="f5zfoceEe4"] {
-        top: 26.9px !important;         /* 40 * (568/844) ≈ 26.92 */
-        left: 13.1px !important;        /* 16 * (320/390) ≈ 13.13 */
-        width: 300.3px !important;      /* 366 * (320/390) ≈ 300.31 */
+        top: 26.9px !important; /* 40 * (568/844) ≈ 26.92 */
+        left: 13.1px !important; /* 16 * (320/390) ≈ 13.13 */
+        width: 300.3px !important; /* 366 * (320/390) ≈ 300.31 */
     }
+
     [data-node-id="8DVvrx8i3i"] {
-        left: 174.8px !important;       /* 213 * (320/390) ≈ 174.77 */
+        left: 174.8px !important; /* 213 * (320/390) ≈ 174.77 */
     }
+
     [data-node-id="DGNPrh8TMJ"] {
-        top: 49px !important;           /* 72.8397 * (568/844) ≈ 49.02 */
-        left: 155.9px !important;       /* 190 * (320/390) ≈ 155.90 */
-        width: 156.6px !important;      /* 190.8 * (320/390) ≈ 156.55 */
+        top: 49px !important; /* 72.8397 * (568/844) ≈ 49.02 */
+        left: 155.9px !important; /* 190 * (320/390) ≈ 155.90 */
+        width: 156.6px !important; /* 190.8 * (320/390) ≈ 156.55 */
     }
 }
 
