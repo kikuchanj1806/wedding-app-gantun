@@ -1013,27 +1013,6 @@ img.heart-date {
 
 /*-----------------------------------------------------end-toolbar-toggle-button-----------------------------------------------------*/
 
-/*@media (max-width: 768px) {*/
-/*    #app-id {*/
-/*        margin: 0;*/
-/*        width: 100%;*/
-/*        height: 100%;*/
-/*    }*/
-
-/*    #app-id .pc-content {*/
-/*        width: 100% !important;*/
-/*        height: 100% !important;*/
-/*    }*/
-
-/*    #app-view-index.hide-toolbar .toolbar-toggle-button {*/
-/*        position: fixed;*/
-/*    }*/
-
-/*    #app-view-index.hide-toolbar .toolbar-toggle-button {*/
-/*        bottom: 70px;*/
-/*    }*/
-/*}*/
-
 /*-----------------------------------------------------dèile-----------------------------------------------------*/
 
 
@@ -1055,8 +1034,8 @@ img.heart-date {
 
     [data-node-id="DGNPrh8TMJ"] {
         top: 69.6024px !important;
-        left: 223.6px !important;
-        width: 182.32px !important;
+        left: 197.6px !important;
+        width: 210.03px !important;
         font-size: 15.48px !important;
     }
 
@@ -1665,10 +1644,10 @@ img.heart-date {
     }
 
     [data-node-id="DGNPrh8TMJ"] {
-        top: 66.67px !important;
-        left: 214.28px !important;
-        width: 174.62px !important;
-        font-size: 14.82px !important;
+        top: 66.67px !important;      /* 69.6024 * 412/430 */
+        left: 189.25px !important;    /* 197.6 * 412/430 */
+        width: 201.07px !important;   /* 210.03 * 412/430 */
+        font-size: 14.82px !important; /* 15.48 * 412/430 */
     }
 
     [data-node-id="Mq6AYw_UlA"] {
@@ -2274,9 +2253,9 @@ img.heart-date {
     }
 
     [data-node-id="DGNPrh8TMJ"] {
-        top: 63.18px !important;
-        left: 202.80px !important;
-        width: 165.40px !important;
+        top: 63.13px !important;
+        left: 179.31px !important;
+        width: 190.57px !important;
         font-size: 14.04px !important;
     }
 
@@ -2882,8 +2861,8 @@ img.heart-date {
 
     [data-node-id="DGNPrh8TMJ"] {
         top: 60.72px !important;
-        left: 194.96px !important;
-        width: 159.03px !important;
+        left: 172.35px !important;
+        width: 183.02px !important;
         font-size: 13.49px !important;
     }
 
@@ -3486,9 +3465,9 @@ img.heart-date {
     }
 
     [data-node-id="DGNPrh8TMJ"] {
-        top: 58.23px !important;
-        left: 187.16px !important;
-        width: 152.61px !important;
+        top: 58.31px !important;
+        left: 165.39px !important;
+        width: 175.46px !important;
         font-size: 12.95px !important;
     }
 
@@ -4095,9 +4074,9 @@ img.heart-date {
     }
 
     [data-node-id="DGNPrh8TMJ"] {
-        top: 51.80px !important;
-        left: 166.32px !important;
-        width: 135.68px !important;
+        top: 51.77px !important;
+        left: 147.05px !important;
+        width: 156.22px !important;
         font-size: 11.52px !important;
     }
 
