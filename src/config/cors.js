@@ -9,6 +9,7 @@ export function buildCorsOptions() {
     const loopbackRegex  = /^http:\/\/127\.0\.0\.1:\d+$/;
 
     return {
+
         origin(origin, cb) {
             // Request nội bộ (same-origin) hoặc công cụ như Postman sẽ không có Origin => cho qua
             if (!origin) return cb(null, true);
