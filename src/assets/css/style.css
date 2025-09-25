@@ -636,8 +636,7 @@ img.heart-date {
     font-size: 11px;
     color: white;
     position: absolute;
-    min-height: 28px;
-    height: 28px;
+    height: auto;
     line-height: 14px;
     margin: 3px 0;
     border-radius: 7px;
