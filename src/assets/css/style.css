@@ -667,12 +667,21 @@ img.heart-date {
     justify-content: flex-start !important;
 }
 
+@keyframes ticker-scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
 /* dải cuộn */
 #blessing-box .ticker-track {
     display: flex;
     flex-direction: column;
-    will-change: transform;
-    animation: blessing-scroll var(--dur, 12s) linear infinite;
+    animation: ticker-scroll linear infinite;
+    animation-duration: var(--dur, 10s);
 }
 
 #blessing-box .blessing-message {

@@ -42,43 +42,77 @@
     });
 })(jQuery);
 
+// (function ($) {
+//     $(function () {
+//         const $box = $('#blessing-box');
+//         if (!$box.length) return;
+//
+//         // Lấy danh sách item gốc
+//         const $items = $box.children('.blessing-message');
+//         if (!$items.length) return;
+//
+//         // Thêm class nhận diện và tạo track
+//         $box.addClass('ticker');
+//         const $track = $('<div class="ticker-track"></div>');
+//
+//         // Đưa 1 bản gốc + 1 bản clone để loop liền mạch
+//         // (Nếu muốn mượt hơn với nội dung dài, có thể clone 2 lần)
+//         const $original = $items.clone(true, true);
+//         $track.append($items);
+//
+//         // Đưa track vào box
+//         $box.empty().append($track);
+//
+//         // Tính tổng chiều cao của "nửa track" (tức phần original)
+//         let halfHeight = 0;
+//         $track.children().each(function (i) {
+//             if (i < $original.length) {
+//                 halfHeight += $(this).outerHeight(true);
+//             }
+//         });
+//
+//         // Tốc độ cuộn: px/giây (chỉnh tùy ý)
+//         const speed = 40; // 40 px/s
+//         const durationSec = Math.max(halfHeight / speed, 4); // tối thiểu 4s cho đỡ chóng mặt
+//
+//         // Gán biến thời lượng cho animation
+//         $track.css('--dur', `${durationSec}s`);
+//
+//         // Nếu nội dung thay đổi động (append thêm lời chúc), có thể gọi lại logic tính halfHeight + cập nhật --dur
+//     });
+// })(jQuery);
+
 (function ($) {
     $(function () {
         const $box = $('#blessing-box');
         if (!$box.length) return;
 
-        // Lấy danh sách item gốc
-        const $items = $box.children('.blessing-message');
-        if (!$items.length) return;
+        // Lấy các lời chúc
+        const $originalItems = $box.find('.blessing-message');
+        if (!$originalItems.length) return;
 
-        // Thêm class nhận diện và tạo track
-        $box.addClass('ticker');
+        // Tạo track mới
         const $track = $('<div class="ticker-track"></div>');
+        $originalItems.clone(true, true).appendTo($track); // Clone để loop
+        $originalItems.appendTo($track); // Bản gốc
 
-        // Đưa 1 bản gốc + 1 bản clone để loop liền mạch
-        // (Nếu muốn mượt hơn với nội dung dài, có thể clone 2 lần)
-        const $original = $items.clone(true, true);
-        $track.append($items);
-
-        // Đưa track vào box
+        // Gắn vào box
         $box.empty().append($track);
 
-        // Tính tổng chiều cao của "nửa track" (tức phần original)
-        let halfHeight = 0;
+        // Tính tổng chiều cao của original (1 vòng)
+        let totalHeight = 0;
         $track.children().each(function (i) {
-            if (i < $original.length) {
-                halfHeight += $(this).outerHeight(true);
+            if (i < $originalItems.length) {
+                totalHeight += $(this).outerHeight(true);
             }
         });
 
-        // Tốc độ cuộn: px/giây (chỉnh tùy ý)
-        const speed = 40; // 40 px/s
-        const durationSec = Math.max(halfHeight / speed, 4); // tối thiểu 4s cho đỡ chóng mặt
+        // Tốc độ cuộn (px/s)
+        const speed = 40;
+        const durationSec = Math.max(totalHeight / speed, 4);
 
-        // Gán biến thời lượng cho animation
+        // Gán thời gian vào biến CSS
         $track.css('--dur', `${durationSec}s`);
-
-        // Nếu nội dung thay đổi động (append thêm lời chúc), có thể gọi lại logic tính halfHeight + cập nhật --dur
     });
 })(jQuery);
 
