@@ -667,21 +667,25 @@ img.heart-date {
     justify-content: flex-start !important;
 }
 
-@keyframes ticker-scroll {
+.ticker {
+    overflow: hidden;
+    height: 100px; /* hoặc tuỳ thuộc số item muốn hiện trên màn hình */
+    position: relative;
+}
+
+.ticker-track {
+    display: block;
+    will-change: transform;
+    animation: none;
+}
+
+@keyframes scroll-up {
     0% {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-50%);
+        transform: translateY(calc(-1 * var(--scroll-distance)));
     }
-}
-
-/* dải cuộn */
-#blessing-box .ticker-track {
-    display: flex;
-    flex-direction: column;
-    animation: ticker-scroll linear infinite;
-    animation-duration: var(--dur, 10s);
 }
 
 #blessing-box .blessing-message {

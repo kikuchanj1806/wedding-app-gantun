@@ -87,32 +87,36 @@
         const $box = $('#blessing-box');
         if (!$box.length) return;
 
-        // Lấy các lời chúc
         const $originalItems = $box.find('.blessing-message');
         if (!$originalItems.length) return;
 
-        // Tạo track mới
+        // Tạo nội dung scroll
         const $track = $('<div class="ticker-track"></div>');
-        $originalItems.clone(true, true).appendTo($track); // Clone để loop
-        $originalItems.appendTo($track); // Bản gốc
+        const $content = $('<div class="ticker-inner"></div>');
 
-        // Gắn vào box
+        // Nhân đôi nội dung để scroll mượt
+        $originalItems.clone(true, true).appendTo($content);
+        $originalItems.clone(true, true).appendTo($content);
+        $originalItems.appendTo($content); // bản gốc ở cuối
+
+        $track.append($content);
         $box.empty().append($track);
 
-        // Tính tổng chiều cao của original (1 vòng)
-        let totalHeight = 0;
-        $track.children().each(function (i) {
-            if (i < $originalItems.length) {
-                totalHeight += $(this).outerHeight(true);
-            }
+        // Tính tổng chiều cao của 1 vòng gốc
+        let scrollDistance = 0;
+        $originalItems.each(function () {
+            scrollDistance += $(this).outerHeight(true);
         });
 
         // Tốc độ cuộn (px/s)
-        const speed = 40;
-        const durationSec = Math.max(totalHeight / speed, 4);
+        const speed = 30;
+        const durationSec = Math.max(scrollDistance / speed, 4);
 
-        // Gán thời gian vào biến CSS
-        $track.css('--dur', `${durationSec}s`);
+        // Gán CSS biến và animation
+        $track.css({
+            '--scroll-distance': `${scrollDistance}px`,
+            'animation': `scroll-up ${durationSec}s linear infinite`
+        });
     });
 })(jQuery);
 
